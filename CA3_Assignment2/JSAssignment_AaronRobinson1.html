@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron Robinson - Javascript Assignment</title>
+    <style>
+      :root {
+        --primary-color: rgb(255, 255, 255);
+        --secondary-color: rgb(147, 161, 161);
+        --bg-color: rgb(255, 165, 0);
+        --font-color: rgb(29, 25, 25);
+        --heading-color : rgb(24, 22, 22);
+      }
+
+      [data-theme="dark"] {
+        --primary-color: rgb(0, 0, 0);
+        --secondary-color: rgb(66, 65, 128);
+        --bg-color: rgb(13, 17, 36);
+        --font-color: rgb(236, 228, 228);
+        --heading-color : rgb(10, 177, 79);
+      }
+
+      body {
+        background: var(--bg-color);
+        color: var(--primary-color);
+      }
+    </style>
+  </head>
+  <body>
+    <button id="theme-toggle-button">Toggle Theme</button>
+
+    <script>
+      const button = document.getElementById('theme-toggle-button');
+      const html = document.querySelector('html');
+
+      button.addEventListener('click', function() {
+        if (html.getAttribute('data-theme') === 'dark') {
+          html.setAttribute('data-theme', 'light');
+        } else {
+          html.setAttribute('data-theme', 'dark');
+        }
+      });
+
+
+    </script>
+  </body>
+</html>
