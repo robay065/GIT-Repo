@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CA4: Javascript, CSS Assignment - Aaron Robinson</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+  
+   <!-- CSS two color palettes-->
+  <style>
+
+.content {
+  max-width: 500px;
+  margin: auto;
+}    
+    :root {
+  --primary-color: rgb(29, 29, 29);
+  --secondary-color: rgb(186, 235, 194);
+  --bg-color: rgb(255, 165, 0);
+  --font-color: rgb(29, 25, 25);  
+  --heading-color :  rgb(24, 22, 22);
+}
+
+[data-theme="dark"] {
+  --primary-color: rgb(247, 229, 229);
+  --secondary-color: rgb(66, 65, 128);
+  --bg-color: rgb(13, 17, 36);
+  --font-color: rgb(236, 228, 228);  
+  --heading-color :  rgb(10, 177, 79);
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--primary-color);
+}
+
+.dark {
+  background: var(--bg-color);
+  color: var(--font-color);
+}
+
+.image-container {
+  display:inline;
+  flex-direction: column;
+  align-items: center;
+}
+
+#birdDescription {
+margin-top: 2px;
+  padding: 1px;
+  background-color: var(--secondary-color);
+  max-width: 43%;
+}
+
+.footer {color: blue;}
+
+  </style>
+  
+  <!-- JS Scripts for Theme and Buttons -->
+  <script>
+
+window.onload = function() {
+  const html = document.querySelector('html');
+  const button = document.getElementById('theme-toggle-button');
+
+  button.addEventListener('click', function() {
+    if (html.getAttribute('data-theme') === 'dark') {
+      html.setAttribute('data-theme', 'light');
+      document.documentElement.classList.remove('dark');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      document.documentElement.classList.add('dark');
+    }
+  });
+
+const bird1Button = document.getElementById('bird1-button');
+const bird2Button = document.getElementById('bird2-button');
+const bird3Button = document.getElementById('bird3-button');
+const bird4Button = document.getElementById('bird4-button');
+const bird5Button = document.getElementById('bird5-button');
+const birdImage = document.getElementById('bird-image');
+
+bird1Button.addEventListener('click', function() {
+  birdImage.src = bird1Button.getAttribute('data-img');
+  birdDescription.textContent = 'Pardalote by fir0002 (CC-by-NC)';
+});
+bird2Button.addEventListener('click', function() {
+  birdImage.src = bird2Button.getAttribute('data-img');
+  birdDescription.textContent = 'Purple swamp hen by Toby Hudson (CC-by-SA)';
+});
+bird3Button.addEventListener('click', function() {
+  birdImage.src = bird3Button.getAttribute('data-img');
+  birdDescription.textContent = 'White-headed Stilt by JJ Harrison (CC-by-SA)';
+});
+bird4Button.addEventListener('click', function() {
+  birdImage.src = bird4Button.getAttribute('data-img');
+  birdDescription.textContent = 'Inland Thornbill by Peter Jacobs (CC-by-SA)';
+});
+bird5Button.addEventListener('click', function() {
+  birdImage.src = bird5Button.getAttribute('data-img');
+  birdDescription.textContent = 'Rose Robin by JJ Harrison (CC-by-SA)';
+});
+}
+</script>
+</head>
+
+<body>
+
+  <header>
+    <h1>CA4: Javascript, CSS - Aaron Robinson </h1>
+    <h2>This page allows you to select 2 different themes and to select different birds</h2>
+  </header>
+
+  <main>
+    <div>
+        <div class="image-container">
+            <img id="bird-image" src="http://www.outgrabe.net/bird00.jpg" alt="">
+            </div>
+            <div id="birdDescription">Pardalote by fir0002 (CC-by-NC)</div>
+        
+    </div>
+    
+         <!-- Bird Buttons -->
+         <h3>Birds</h3>
+         <p>Please select a relevent button to see picture of the bird</p>
+         
+         <button id="bird1-button" data-img="http://www.outgrabe.net/bird00.jpg">Pardalote</button>
+         <button id="bird2-button" data-img="http://www.outgrabe.net/bird01.jpg">Purple Swamp Hen</button>
+         <button id="bird3-button" data-img="http://www.outgrabe.net/bird02.jpg">White-headed Stilt</button>
+         <button id="bird4-button" data-img="http://www.outgrabe.net/bird03.jpg">Inland Thornbill</button>
+         <button id="bird5-button" data-img="http://www.outgrabe.net/bird04.jpg">Rose Robin</button>
+         
+       
+    <!-- Toggle Theme Button-->
+
+          <h4>Toggle theme</h4>
+        <button id="theme-toggle-button">Toggle Theme</button>
+    
+      <div id="bird-info">    </div>
+    </main>
+
+
+    <footer>
+   
+    <p>©Copyright 2050 by nobody. All rights reversed.</p>
+    </footer>
+
+</body>
+</html>
